@@ -1,7 +1,9 @@
 package co.edu.ff.orders.productos.domain;
 
 import co.edu.ff.orders.productos.exceptions.ProductException;
+import lombok.Value;
 
+@Value(staticConstructor = "of")
 public class ProductOperationFailure implements ProductOperation {
 
     ProductException exception;
@@ -13,11 +15,11 @@ public class ProductOperationFailure implements ProductOperation {
 
     @Override
     public ProductException failure() {
-        return null;
+        return exception;
     }
 
     @Override
     public Boolean isValid() {
-        return null;
+        return false;
     }
 }

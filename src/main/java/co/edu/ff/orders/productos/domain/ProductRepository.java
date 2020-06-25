@@ -9,10 +9,12 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository {
-    ProductOperation insertOne(ProductOperationRequest productOperationRequest);
+    Product insertOne(ProductOperationRequest productOperationRequest);
 
 
-    //Optional<UserCreated> findById(Long id);
+    Optional<Product> findById(Long id);
+
+    Optional<Product> findByName(Name name);
 
     //Optional<UserCreated> findByUsername(Username username);
 }

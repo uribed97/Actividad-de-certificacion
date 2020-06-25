@@ -4,8 +4,8 @@ import com.google.common.base.Preconditions;
 import lombok.Builder;
 import lombok.Value;
 
-@Value
 @Builder
+@Value(staticConstructor = "of")
 public class Product {
     ProductId id;
     Name name;

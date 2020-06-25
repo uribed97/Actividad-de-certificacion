@@ -8,11 +8,11 @@ import lombok.Value;
 @Value(staticConstructor = "of")
 public class ProductDoesNotExists extends ProductException {
 
-    Description description;
+    long productId;
 
-  public ProductDoesNotExists(Description descripcion) {
-      super("El producto no existe");
-      this.description = description;
+  public ProductDoesNotExists(long productId) {
+      super("El producto con ID: " + productId + " no existe");
+      this.productId = productId;
     }
 
 

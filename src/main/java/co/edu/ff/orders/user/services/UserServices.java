@@ -1,5 +1,7 @@
 package co.edu.ff.orders.user.services;
 
+import co.edu.ff.orders.productos.domain.ProductOperation;
+import co.edu.ff.orders.productos.domain.ProductOperationRequest;
 import co.edu.ff.orders.user.domain.*;
 import co.edu.ff.orders.user.exceptions.UserAlreadyExistsException;
 import co.edu.ff.orders.user.repositories.UserRepository;
@@ -18,7 +20,7 @@ public class UserServices {
         this.repository = repository;
     }
 
-    public UserOperation createUser(Username username, Password password) {
+    public ProductOperation insertOne(ProductOperationRequest productOperationRequest) {
         Optional<UserCreated> userExistence = repository.findByUsername(username);
         if(userExistence.isPresent()){
             UserAlreadyExistsException exception = UserAlreadyExistsException.of(username);
